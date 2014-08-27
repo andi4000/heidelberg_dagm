@@ -1,4 +1,12 @@
-function XC = extract_features(X, D, rfSize, IMG_DIM, M,P, encoder, encParam)
+function XC = extract_features(X, D, rfSize, IMG_DIM, M,P, encoder, encParam, stride)
+
+    if ~exist('stride', 'var')
+	stride = [0 0];
+    end
+    if length(stride) ~= 2
+	error('stride must be 1x2');
+    end
+
     numBases = size(D,1);
     
     % compute features for all training images
@@ -15,10 +23,15 @@ function XC = extract_features(X, D, rfSize, IMG_DIM, M,P, encoder, encParam)
 %                     im2col(reshape(X(i,1025:2048),IMG_DIM(1:2)), [rfSize rfSize]) ;
 %                     im2col(reshape(X(i,2049:end),IMG_DIM(1:2)), [rfSize rfSize]) ]';
         
-        % TODO: not sure how this works, the element number changes
-	% DONE: this is the "sliding window"
-        fprintf('im2col... ');
-        patches = im2col(reshape(X(i, 1:end), IMG_DIM(1:2)), [rfSize rfSize])';
+	if stride
+		fprintf('im2colstep... ');
+		patches = im2colstep(reshape(X(i, 1:end), IMG_DIM(1:2)), [rfSize rfSize], stride)';
+	else
+        	% TODO: not sure how this works, the element number changes
+		% DONE: this is the "sliding window"
+        	fprintf('im2col... ');
+        	patches = im2col(reshape(X(i, 1:end), IMG_DIM(1:2)), [rfSize rfSize])';
+	end
 
         % do preprocessing for each patch
         
