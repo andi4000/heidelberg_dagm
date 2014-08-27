@@ -1,0 +1,1026 @@
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2014 The MathWorks, Inc.
+                    R2014a (8.3.0.532) 64-bit (glnxa64)
+                             February 11, 2014
+
+
+	This is a Classroom License for instructional use only.
+	Research and commercial use is prohibited.
+ 
+To get started, type one of these: helpwin, helpdesk, or demo.
+For product information, visit www.mathworks.com.
+ 
+>> >> >> >> >> >> >> >> >> >> >> >> >> >> loading dataset . . .
+>> >> >> >> >> >> ### Loading took 6.45 s.
+>> >> >> >> >> >> >> data length = 600
+>> >> >> separating test data from training data . . .
+>> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> 
+numBases =
+
+        2400
+
+>> 
+numPatches =
+
+      800000
+
+>> 
+rfSize =
+
+    32
+
+>> >> >> 
+alpha =
+
+    0.2500
+
+>> 
+lambda =
+
+     1
+
+>> >> 
+encoder =
+
+thresh
+
+>> 
+encParam =
+
+    0.2500
+
+>> >> 
+L =
+
+    0.0100
+
+>> >> >> >> extracting patch 1000 of 800000
+extracting patch 2000 of 800000
+extracting patch 3000 of 800000
+extracting patch 4000 of 800000
+extracting patch 5000 of 800000
+extracting patch 6000 of 800000
+extracting patch 7000 of 800000
+extracting patch 8000 of 800000
+extracting patch 9000 of 800000
+extracting patch 10000 of 800000
+extracting patch 11000 of 800000
+extracting patch 12000 of 800000
+extracting patch 13000 of 800000
+extracting patch 14000 of 800000
+extracting patch 15000 of 800000
+extracting patch 16000 of 800000
+extracting patch 17000 of 800000
+extracting patch 18000 of 800000
+extracting patch 19000 of 800000
+extracting patch 20000 of 800000
+extracting patch 21000 of 800000
+extracting patch 22000 of 800000
+extracting patch 23000 of 800000
+extracting patch 24000 of 800000
+extracting patch 25000 of 800000
+extracting patch 26000 of 800000
+extracting patch 27000 of 800000
+extracting patch 28000 of 800000
+extracting patch 29000 of 800000
+extracting patch 30000 of 800000
+extracting patch 31000 of 800000
+extracting patch 32000 of 800000
+extracting patch 33000 of 800000
+extracting patch 34000 of 800000
+extracting patch 35000 of 800000
+extracting patch 36000 of 800000
+extracting patch 37000 of 800000
+extracting patch 38000 of 800000
+extracting patch 39000 of 800000
+extracting patch 40000 of 800000
+extracting patch 41000 of 800000
+extracting patch 42000 of 800000
+extracting patch 43000 of 800000
+extracting patch 44000 of 800000
+extracting patch 45000 of 800000
+extracting patch 46000 of 800000
+extracting patch 47000 of 800000
+extracting patch 48000 of 800000
+extracting patch 49000 of 800000
+extracting patch 50000 of 800000
+### Time elapsed since beginning: 4.29 m.
+extracting patch 51000 of 800000
+extracting patch 52000 of 800000
+extracting patch 53000 of 800000
+extracting patch 54000 of 800000
+extracting patch 55000 of 800000
+extracting patch 56000 of 800000
+extracting patch 57000 of 800000
+extracting patch 58000 of 800000
+extracting patch 59000 of 800000
+extracting patch 60000 of 800000
+extracting patch 61000 of 800000
+extracting patch 62000 of 800000
+extracting patch 63000 of 800000
+extracting patch 64000 of 800000
+extracting patch 65000 of 800000
+extracting patch 66000 of 800000
+extracting patch 67000 of 800000
+extracting patch 68000 of 800000
+extracting patch 69000 of 800000
+extracting patch 70000 of 800000
+extracting patch 71000 of 800000
+extracting patch 72000 of 800000
+extracting patch 73000 of 800000
+extracting patch 74000 of 800000
+extracting patch 75000 of 800000
+extracting patch 76000 of 800000
+extracting patch 77000 of 800000
+extracting patch 78000 of 800000
+extracting patch 79000 of 800000
+extracting patch 80000 of 800000
+extracting patch 81000 of 800000
+extracting patch 82000 of 800000
+extracting patch 83000 of 800000
+extracting patch 84000 of 800000
+extracting patch 85000 of 800000
+extracting patch 86000 of 800000
+extracting patch 87000 of 800000
+extracting patch 88000 of 800000
+extracting patch 89000 of 800000
+extracting patch 90000 of 800000
+extracting patch 91000 of 800000
+extracting patch 92000 of 800000
+extracting patch 93000 of 800000
+extracting patch 94000 of 800000
+extracting patch 95000 of 800000
+extracting patch 96000 of 800000
+extracting patch 97000 of 800000
+extracting patch 98000 of 800000
+extracting patch 99000 of 800000
+extracting patch 100000 of 800000
+### Time elapsed since beginning: 8.39 m.
+extracting patch 101000 of 800000
+extracting patch 102000 of 800000
+extracting patch 103000 of 800000
+extracting patch 104000 of 800000
+extracting patch 105000 of 800000
+extracting patch 106000 of 800000
+extracting patch 107000 of 800000
+extracting patch 108000 of 800000
+extracting patch 109000 of 800000
+extracting patch 110000 of 800000
+extracting patch 111000 of 800000
+extracting patch 112000 of 800000
+extracting patch 113000 of 800000
+extracting patch 114000 of 800000
+extracting patch 115000 of 800000
+extracting patch 116000 of 800000
+extracting patch 117000 of 800000
+extracting patch 118000 of 800000
+extracting patch 119000 of 800000
+extracting patch 120000 of 800000
+extracting patch 121000 of 800000
+extracting patch 122000 of 800000
+extracting patch 123000 of 800000
+extracting patch 124000 of 800000
+extracting patch 125000 of 800000
+extracting patch 126000 of 800000
+extracting patch 127000 of 800000
+extracting patch 128000 of 800000
+extracting patch 129000 of 800000
+extracting patch 130000 of 800000
+extracting patch 131000 of 800000
+extracting patch 132000 of 800000
+extracting patch 133000 of 800000
+extracting patch 134000 of 800000
+extracting patch 135000 of 800000
+extracting patch 136000 of 800000
+extracting patch 137000 of 800000
+extracting patch 138000 of 800000
+extracting patch 139000 of 800000
+extracting patch 140000 of 800000
+extracting patch 141000 of 800000
+extracting patch 142000 of 800000
+extracting patch 143000 of 800000
+extracting patch 144000 of 800000
+extracting patch 145000 of 800000
+extracting patch 146000 of 800000
+extracting patch 147000 of 800000
+extracting patch 148000 of 800000
+extracting patch 149000 of 800000
+extracting patch 150000 of 800000
+### Time elapsed since beginning: 12.47 m.
+extracting patch 151000 of 800000
+extracting patch 152000 of 800000
+extracting patch 153000 of 800000
+extracting patch 154000 of 800000
+extracting patch 155000 of 800000
+extracting patch 156000 of 800000
+extracting patch 157000 of 800000
+extracting patch 158000 of 800000
+extracting patch 159000 of 800000
+extracting patch 160000 of 800000
+extracting patch 161000 of 800000
+extracting patch 162000 of 800000
+extracting patch 163000 of 800000
+extracting patch 164000 of 800000
+extracting patch 165000 of 800000
+extracting patch 166000 of 800000
+extracting patch 167000 of 800000
+extracting patch 168000 of 800000
+extracting patch 169000 of 800000
+extracting patch 170000 of 800000
+extracting patch 171000 of 800000
+extracting patch 172000 of 800000
+extracting patch 173000 of 800000
+extracting patch 174000 of 800000
+extracting patch 175000 of 800000
+extracting patch 176000 of 800000
+extracting patch 177000 of 800000
+extracting patch 178000 of 800000
+extracting patch 179000 of 800000
+extracting patch 180000 of 800000
+extracting patch 181000 of 800000
+extracting patch 182000 of 800000
+extracting patch 183000 of 800000
+extracting patch 184000 of 800000
+extracting patch 185000 of 800000
+extracting patch 186000 of 800000
+extracting patch 187000 of 800000
+extracting patch 188000 of 800000
+extracting patch 189000 of 800000
+extracting patch 190000 of 800000
+extracting patch 191000 of 800000
+extracting patch 192000 of 800000
+extracting patch 193000 of 800000
+extracting patch 194000 of 800000
+extracting patch 195000 of 800000
+extracting patch 196000 of 800000
+extracting patch 197000 of 800000
+extracting patch 198000 of 800000
+extracting patch 199000 of 800000
+extracting patch 200000 of 800000
+### Time elapsed since beginning: 16.54 m.
+extracting patch 201000 of 800000
+extracting patch 202000 of 800000
+extracting patch 203000 of 800000
+extracting patch 204000 of 800000
+extracting patch 205000 of 800000
+extracting patch 206000 of 800000
+extracting patch 207000 of 800000
+extracting patch 208000 of 800000
+extracting patch 209000 of 800000
+extracting patch 210000 of 800000
+extracting patch 211000 of 800000
+extracting patch 212000 of 800000
+extracting patch 213000 of 800000
+extracting patch 214000 of 800000
+extracting patch 215000 of 800000
+extracting patch 216000 of 800000
+extracting patch 217000 of 800000
+extracting patch 218000 of 800000
+extracting patch 219000 of 800000
+extracting patch 220000 of 800000
+extracting patch 221000 of 800000
+extracting patch 222000 of 800000
+extracting patch 223000 of 800000
+extracting patch 224000 of 800000
+extracting patch 225000 of 800000
+extracting patch 226000 of 800000
+extracting patch 227000 of 800000
+extracting patch 228000 of 800000
+extracting patch 229000 of 800000
+extracting patch 230000 of 800000
+extracting patch 231000 of 800000
+extracting patch 232000 of 800000
+extracting patch 233000 of 800000
+extracting patch 234000 of 800000
+extracting patch 235000 of 800000
+extracting patch 236000 of 800000
+extracting patch 237000 of 800000
+extracting patch 238000 of 800000
+extracting patch 239000 of 800000
+extracting patch 240000 of 800000
+extracting patch 241000 of 800000
+extracting patch 242000 of 800000
+extracting patch 243000 of 800000
+extracting patch 244000 of 800000
+extracting patch 245000 of 800000
+extracting patch 246000 of 800000
+extracting patch 247000 of 800000
+extracting patch 248000 of 800000
+extracting patch 249000 of 800000
+extracting patch 250000 of 800000
+### Time elapsed since beginning: 20.60 m.
+extracting patch 251000 of 800000
+extracting patch 252000 of 800000
+extracting patch 253000 of 800000
+extracting patch 254000 of 800000
+extracting patch 255000 of 800000
+extracting patch 256000 of 800000
+extracting patch 257000 of 800000
+extracting patch 258000 of 800000
+extracting patch 259000 of 800000
+extracting patch 260000 of 800000
+extracting patch 261000 of 800000
+extracting patch 262000 of 800000
+extracting patch 263000 of 800000
+extracting patch 264000 of 800000
+extracting patch 265000 of 800000
+extracting patch 266000 of 800000
+extracting patch 267000 of 800000
+extracting patch 268000 of 800000
+extracting patch 269000 of 800000
+extracting patch 270000 of 800000
+extracting patch 271000 of 800000
+extracting patch 272000 of 800000
+extracting patch 273000 of 800000
+extracting patch 274000 of 800000
+extracting patch 275000 of 800000
+extracting patch 276000 of 800000
+extracting patch 277000 of 800000
+extracting patch 278000 of 800000
+extracting patch 279000 of 800000
+extracting patch 280000 of 800000
+extracting patch 281000 of 800000
+extracting patch 282000 of 800000
+extracting patch 283000 of 800000
+extracting patch 284000 of 800000
+extracting patch 285000 of 800000
+extracting patch 286000 of 800000
+extracting patch 287000 of 800000
+extracting patch 288000 of 800000
+extracting patch 289000 of 800000
+extracting patch 290000 of 800000
+extracting patch 291000 of 800000
+extracting patch 292000 of 800000
+extracting patch 293000 of 800000
+extracting patch 294000 of 800000
+extracting patch 295000 of 800000
+extracting patch 296000 of 800000
+extracting patch 297000 of 800000
+extracting patch 298000 of 800000
+extracting patch 299000 of 800000
+extracting patch 300000 of 800000
+### Time elapsed since beginning: 24.67 m.
+extracting patch 301000 of 800000
+extracting patch 302000 of 800000
+extracting patch 303000 of 800000
+extracting patch 304000 of 800000
+extracting patch 305000 of 800000
+extracting patch 306000 of 800000
+extracting patch 307000 of 800000
+extracting patch 308000 of 800000
+extracting patch 309000 of 800000
+extracting patch 310000 of 800000
+extracting patch 311000 of 800000
+extracting patch 312000 of 800000
+extracting patch 313000 of 800000
+extracting patch 314000 of 800000
+extracting patch 315000 of 800000
+extracting patch 316000 of 800000
+extracting patch 317000 of 800000
+extracting patch 318000 of 800000
+extracting patch 319000 of 800000
+extracting patch 320000 of 800000
+extracting patch 321000 of 800000
+extracting patch 322000 of 800000
+extracting patch 323000 of 800000
+extracting patch 324000 of 800000
+extracting patch 325000 of 800000
+extracting patch 326000 of 800000
+extracting patch 327000 of 800000
+extracting patch 328000 of 800000
+extracting patch 329000 of 800000
+extracting patch 330000 of 800000
+extracting patch 331000 of 800000
+extracting patch 332000 of 800000
+extracting patch 333000 of 800000
+extracting patch 334000 of 800000
+extracting patch 335000 of 800000
+extracting patch 336000 of 800000
+extracting patch 337000 of 800000
+extracting patch 338000 of 800000
+extracting patch 339000 of 800000
+extracting patch 340000 of 800000
+extracting patch 341000 of 800000
+extracting patch 342000 of 800000
+extracting patch 343000 of 800000
+extracting patch 344000 of 800000
+extracting patch 345000 of 800000
+extracting patch 346000 of 800000
+extracting patch 347000 of 800000
+extracting patch 348000 of 800000
+extracting patch 349000 of 800000
+extracting patch 350000 of 800000
+### Time elapsed since beginning: 28.74 m.
+extracting patch 351000 of 800000
+extracting patch 352000 of 800000
+extracting patch 353000 of 800000
+extracting patch 354000 of 800000
+extracting patch 355000 of 800000
+extracting patch 356000 of 800000
+extracting patch 357000 of 800000
+extracting patch 358000 of 800000
+extracting patch 359000 of 800000
+extracting patch 360000 of 800000
+extracting patch 361000 of 800000
+extracting patch 362000 of 800000
+extracting patch 363000 of 800000
+extracting patch 364000 of 800000
+extracting patch 365000 of 800000
+extracting patch 366000 of 800000
+extracting patch 367000 of 800000
+extracting patch 368000 of 800000
+extracting patch 369000 of 800000
+extracting patch 370000 of 800000
+extracting patch 371000 of 800000
+extracting patch 372000 of 800000
+extracting patch 373000 of 800000
+extracting patch 374000 of 800000
+extracting patch 375000 of 800000
+extracting patch 376000 of 800000
+extracting patch 377000 of 800000
+extracting patch 378000 of 800000
+extracting patch 379000 of 800000
+extracting patch 380000 of 800000
+extracting patch 381000 of 800000
+extracting patch 382000 of 800000
+extracting patch 383000 of 800000
+extracting patch 384000 of 800000
+extracting patch 385000 of 800000
+extracting patch 386000 of 800000
+extracting patch 387000 of 800000
+extracting patch 388000 of 800000
+extracting patch 389000 of 800000
+extracting patch 390000 of 800000
+extracting patch 391000 of 800000
+extracting patch 392000 of 800000
+extracting patch 393000 of 800000
+extracting patch 394000 of 800000
+extracting patch 395000 of 800000
+extracting patch 396000 of 800000
+extracting patch 397000 of 800000
+extracting patch 398000 of 800000
+extracting patch 399000 of 800000
+extracting patch 400000 of 800000
+### Time elapsed since beginning: 32.82 m.
+extracting patch 401000 of 800000
+extracting patch 402000 of 800000
+extracting patch 403000 of 800000
+extracting patch 404000 of 800000
+extracting patch 405000 of 800000
+extracting patch 406000 of 800000
+extracting patch 407000 of 800000
+extracting patch 408000 of 800000
+extracting patch 409000 of 800000
+extracting patch 410000 of 800000
+extracting patch 411000 of 800000
+extracting patch 412000 of 800000
+extracting patch 413000 of 800000
+extracting patch 414000 of 800000
+extracting patch 415000 of 800000
+extracting patch 416000 of 800000
+extracting patch 417000 of 800000
+extracting patch 418000 of 800000
+extracting patch 419000 of 800000
+extracting patch 420000 of 800000
+extracting patch 421000 of 800000
+extracting patch 422000 of 800000
+extracting patch 423000 of 800000
+extracting patch 424000 of 800000
+extracting patch 425000 of 800000
+extracting patch 426000 of 800000
+extracting patch 427000 of 800000
+extracting patch 428000 of 800000
+extracting patch 429000 of 800000
+extracting patch 430000 of 800000
+extracting patch 431000 of 800000
+extracting patch 432000 of 800000
+extracting patch 433000 of 800000
+extracting patch 434000 of 800000
+extracting patch 435000 of 800000
+extracting patch 436000 of 800000
+extracting patch 437000 of 800000
+extracting patch 438000 of 800000
+extracting patch 439000 of 800000
+extracting patch 440000 of 800000
+extracting patch 441000 of 800000
+extracting patch 442000 of 800000
+extracting patch 443000 of 800000
+extracting patch 444000 of 800000
+extracting patch 445000 of 800000
+extracting patch 446000 of 800000
+extracting patch 447000 of 800000
+extracting patch 448000 of 800000
+extracting patch 449000 of 800000
+extracting patch 450000 of 800000
+### Time elapsed since beginning: 36.90 m.
+extracting patch 451000 of 800000
+extracting patch 452000 of 800000
+extracting patch 453000 of 800000
+extracting patch 454000 of 800000
+extracting patch 455000 of 800000
+extracting patch 456000 of 800000
+extracting patch 457000 of 800000
+extracting patch 458000 of 800000
+extracting patch 459000 of 800000
+extracting patch 460000 of 800000
+extracting patch 461000 of 800000
+extracting patch 462000 of 800000
+extracting patch 463000 of 800000
+extracting patch 464000 of 800000
+extracting patch 465000 of 800000
+extracting patch 466000 of 800000
+extracting patch 467000 of 800000
+extracting patch 468000 of 800000
+extracting patch 469000 of 800000
+extracting patch 470000 of 800000
+extracting patch 471000 of 800000
+extracting patch 472000 of 800000
+extracting patch 473000 of 800000
+extracting patch 474000 of 800000
+extracting patch 475000 of 800000
+extracting patch 476000 of 800000
+extracting patch 477000 of 800000
+extracting patch 478000 of 800000
+extracting patch 479000 of 800000
+extracting patch 480000 of 800000
+extracting patch 481000 of 800000
+extracting patch 482000 of 800000
+extracting patch 483000 of 800000
+extracting patch 484000 of 800000
+extracting patch 485000 of 800000
+extracting patch 486000 of 800000
+extracting patch 487000 of 800000
+extracting patch 488000 of 800000
+extracting patch 489000 of 800000
+extracting patch 490000 of 800000
+extracting patch 491000 of 800000
+extracting patch 492000 of 800000
+extracting patch 493000 of 800000
+extracting patch 494000 of 800000
+extracting patch 495000 of 800000
+extracting patch 496000 of 800000
+extracting patch 497000 of 800000
+extracting patch 498000 of 800000
+extracting patch 499000 of 800000
+extracting patch 500000 of 800000
+### Time elapsed since beginning: 40.97 m.
+extracting patch 501000 of 800000
+extracting patch 502000 of 800000
+extracting patch 503000 of 800000
+extracting patch 504000 of 800000
+extracting patch 505000 of 800000
+extracting patch 506000 of 800000
+extracting patch 507000 of 800000
+extracting patch 508000 of 800000
+extracting patch 509000 of 800000
+extracting patch 510000 of 800000
+extracting patch 511000 of 800000
+extracting patch 512000 of 800000
+extracting patch 513000 of 800000
+extracting patch 514000 of 800000
+extracting patch 515000 of 800000
+extracting patch 516000 of 800000
+extracting patch 517000 of 800000
+extracting patch 518000 of 800000
+extracting patch 519000 of 800000
+extracting patch 520000 of 800000
+extracting patch 521000 of 800000
+extracting patch 522000 of 800000
+extracting patch 523000 of 800000
+extracting patch 524000 of 800000
+extracting patch 525000 of 800000
+extracting patch 526000 of 800000
+extracting patch 527000 of 800000
+extracting patch 528000 of 800000
+extracting patch 529000 of 800000
+extracting patch 530000 of 800000
+extracting patch 531000 of 800000
+extracting patch 532000 of 800000
+extracting patch 533000 of 800000
+extracting patch 534000 of 800000
+extracting patch 535000 of 800000
+extracting patch 536000 of 800000
+extracting patch 537000 of 800000
+extracting patch 538000 of 800000
+extracting patch 539000 of 800000
+extracting patch 540000 of 800000
+extracting patch 541000 of 800000
+extracting patch 542000 of 800000
+extracting patch 543000 of 800000
+extracting patch 544000 of 800000
+extracting patch 545000 of 800000
+extracting patch 546000 of 800000
+extracting patch 547000 of 800000
+extracting patch 548000 of 800000
+extracting patch 549000 of 800000
+extracting patch 550000 of 800000
+### Time elapsed since beginning: 45.04 m.
+extracting patch 551000 of 800000
+extracting patch 552000 of 800000
+extracting patch 553000 of 800000
+extracting patch 554000 of 800000
+extracting patch 555000 of 800000
+extracting patch 556000 of 800000
+extracting patch 557000 of 800000
+extracting patch 558000 of 800000
+extracting patch 559000 of 800000
+extracting patch 560000 of 800000
+extracting patch 561000 of 800000
+extracting patch 562000 of 800000
+extracting patch 563000 of 800000
+extracting patch 564000 of 800000
+extracting patch 565000 of 800000
+extracting patch 566000 of 800000
+extracting patch 567000 of 800000
+extracting patch 568000 of 800000
+extracting patch 569000 of 800000
+extracting patch 570000 of 800000
+extracting patch 571000 of 800000
+extracting patch 572000 of 800000
+extracting patch 573000 of 800000
+extracting patch 574000 of 800000
+extracting patch 575000 of 800000
+extracting patch 576000 of 800000
+extracting patch 577000 of 800000
+extracting patch 578000 of 800000
+extracting patch 579000 of 800000
+extracting patch 580000 of 800000
+extracting patch 581000 of 800000
+extracting patch 582000 of 800000
+extracting patch 583000 of 800000
+extracting patch 584000 of 800000
+extracting patch 585000 of 800000
+extracting patch 586000 of 800000
+extracting patch 587000 of 800000
+extracting patch 588000 of 800000
+extracting patch 589000 of 800000
+extracting patch 590000 of 800000
+extracting patch 591000 of 800000
+extracting patch 592000 of 800000
+extracting patch 593000 of 800000
+extracting patch 594000 of 800000
+extracting patch 595000 of 800000
+extracting patch 596000 of 800000
+extracting patch 597000 of 800000
+extracting patch 598000 of 800000
+extracting patch 599000 of 800000
+extracting patch 600000 of 800000
+### Time elapsed since beginning: 49.10 m.
+extracting patch 601000 of 800000
+extracting patch 602000 of 800000
+extracting patch 603000 of 800000
+extracting patch 604000 of 800000
+extracting patch 605000 of 800000
+extracting patch 606000 of 800000
+extracting patch 607000 of 800000
+extracting patch 608000 of 800000
+extracting patch 609000 of 800000
+extracting patch 610000 of 800000
+extracting patch 611000 of 800000
+extracting patch 612000 of 800000
+extracting patch 613000 of 800000
+extracting patch 614000 of 800000
+extracting patch 615000 of 800000
+extracting patch 616000 of 800000
+extracting patch 617000 of 800000
+extracting patch 618000 of 800000
+extracting patch 619000 of 800000
+extracting patch 620000 of 800000
+extracting patch 621000 of 800000
+extracting patch 622000 of 800000
+extracting patch 623000 of 800000
+extracting patch 624000 of 800000
+extracting patch 625000 of 800000
+extracting patch 626000 of 800000
+extracting patch 627000 of 800000
+extracting patch 628000 of 800000
+extracting patch 629000 of 800000
+extracting patch 630000 of 800000
+extracting patch 631000 of 800000
+extracting patch 632000 of 800000
+extracting patch 633000 of 800000
+extracting patch 634000 of 800000
+extracting patch 635000 of 800000
+extracting patch 636000 of 800000
+extracting patch 637000 of 800000
+extracting patch 638000 of 800000
+extracting patch 639000 of 800000
+extracting patch 640000 of 800000
+extracting patch 641000 of 800000
+extracting patch 642000 of 800000
+extracting patch 643000 of 800000
+extracting patch 644000 of 800000
+extracting patch 645000 of 800000
+extracting patch 646000 of 800000
+extracting patch 647000 of 800000
+extracting patch 648000 of 800000
+extracting patch 649000 of 800000
+extracting patch 650000 of 800000
+### Time elapsed since beginning: 53.16 m.
+extracting patch 651000 of 800000
+extracting patch 652000 of 800000
+extracting patch 653000 of 800000
+extracting patch 654000 of 800000
+extracting patch 655000 of 800000
+extracting patch 656000 of 800000
+extracting patch 657000 of 800000
+extracting patch 658000 of 800000
+extracting patch 659000 of 800000
+extracting patch 660000 of 800000
+extracting patch 661000 of 800000
+extracting patch 662000 of 800000
+extracting patch 663000 of 800000
+extracting patch 664000 of 800000
+extracting patch 665000 of 800000
+extracting patch 666000 of 800000
+extracting patch 667000 of 800000
+extracting patch 668000 of 800000
+extracting patch 669000 of 800000
+extracting patch 670000 of 800000
+extracting patch 671000 of 800000
+extracting patch 672000 of 800000
+extracting patch 673000 of 800000
+extracting patch 674000 of 800000
+extracting patch 675000 of 800000
+extracting patch 676000 of 800000
+extracting patch 677000 of 800000
+extracting patch 678000 of 800000
+extracting patch 679000 of 800000
+extracting patch 680000 of 800000
+extracting patch 681000 of 800000
+extracting patch 682000 of 800000
+extracting patch 683000 of 800000
+extracting patch 684000 of 800000
+extracting patch 685000 of 800000
+extracting patch 686000 of 800000
+extracting patch 687000 of 800000
+extracting patch 688000 of 800000
+extracting patch 689000 of 800000
+extracting patch 690000 of 800000
+extracting patch 691000 of 800000
+extracting patch 692000 of 800000
+extracting patch 693000 of 800000
+extracting patch 694000 of 800000
+extracting patch 695000 of 800000
+extracting patch 696000 of 800000
+extracting patch 697000 of 800000
+extracting patch 698000 of 800000
+extracting patch 699000 of 800000
+extracting patch 700000 of 800000
+### Time elapsed since beginning: 57.22 m.
+extracting patch 701000 of 800000
+extracting patch 702000 of 800000
+extracting patch 703000 of 800000
+extracting patch 704000 of 800000
+extracting patch 705000 of 800000
+extracting patch 706000 of 800000
+extracting patch 707000 of 800000
+extracting patch 708000 of 800000
+extracting patch 709000 of 800000
+extracting patch 710000 of 800000
+extracting patch 711000 of 800000
+extracting patch 712000 of 800000
+extracting patch 713000 of 800000
+extracting patch 714000 of 800000
+extracting patch 715000 of 800000
+extracting patch 716000 of 800000
+extracting patch 717000 of 800000
+extracting patch 718000 of 800000
+extracting patch 719000 of 800000
+extracting patch 720000 of 800000
+extracting patch 721000 of 800000
+extracting patch 722000 of 800000
+extracting patch 723000 of 800000
+extracting patch 724000 of 800000
+extracting patch 725000 of 800000
+extracting patch 726000 of 800000
+extracting patch 727000 of 800000
+extracting patch 728000 of 800000
+extracting patch 729000 of 800000
+extracting patch 730000 of 800000
+extracting patch 731000 of 800000
+extracting patch 732000 of 800000
+extracting patch 733000 of 800000
+extracting patch 734000 of 800000
+extracting patch 735000 of 800000
+extracting patch 736000 of 800000
+extracting patch 737000 of 800000
+extracting patch 738000 of 800000
+extracting patch 739000 of 800000
+extracting patch 740000 of 800000
+extracting patch 741000 of 800000
+extracting patch 742000 of 800000
+extracting patch 743000 of 800000
+extracting patch 744000 of 800000
+extracting patch 745000 of 800000
+extracting patch 746000 of 800000
+extracting patch 747000 of 800000
+extracting patch 748000 of 800000
+extracting patch 749000 of 800000
+extracting patch 750000 of 800000
+### Time elapsed since beginning: 61.28 m.
+extracting patch 751000 of 800000
+extracting patch 752000 of 800000
+extracting patch 753000 of 800000
+extracting patch 754000 of 800000
+extracting patch 755000 of 800000
+extracting patch 756000 of 800000
+extracting patch 757000 of 800000
+extracting patch 758000 of 800000
+extracting patch 759000 of 800000
+extracting patch 760000 of 800000
+extracting patch 761000 of 800000
+extracting patch 762000 of 800000
+extracting patch 763000 of 800000
+extracting patch 764000 of 800000
+extracting patch 765000 of 800000
+extracting patch 766000 of 800000
+extracting patch 767000 of 800000
+extracting patch 768000 of 800000
+extracting patch 769000 of 800000
+extracting patch 770000 of 800000
+extracting patch 771000 of 800000
+extracting patch 772000 of 800000
+extracting patch 773000 of 800000
+extracting patch 774000 of 800000
+extracting patch 775000 of 800000
+extracting patch 776000 of 800000
+extracting patch 777000 of 800000
+extracting patch 778000 of 800000
+extracting patch 779000 of 800000
+extracting patch 780000 of 800000
+extracting patch 781000 of 800000
+extracting patch 782000 of 800000
+extracting patch 783000 of 800000
+extracting patch 784000 of 800000
+extracting patch 785000 of 800000
+extracting patch 786000 of 800000
+extracting patch 787000 of 800000
+extracting patch 788000 of 800000
+extracting patch 789000 of 800000
+extracting patch 790000 of 800000
+extracting patch 791000 of 800000
+extracting patch 792000 of 800000
+extracting patch 793000 of 800000
+extracting patch 794000 of 800000
+extracting patch 795000 of 800000
+extracting patch 796000 of 800000
+extracting patch 797000 of 800000
+extracting patch 798000 of 800000
+extracting patch 799000 of 800000
+extracting patch 800000 of 800000
+### Time elapsed since beginning: 65.34 m.
+>> ### Patching took 1.09 h.
+>> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> ### Time elapsed since beginning: 1.96 h.
+>> Running OMP1 . . .
+>> Running GSVQ:  iteration=1... 
+Running GSVQ:  iteration=2... 
+Running GSVQ:  iteration=3... 
+Running GSVQ:  iteration=4... 
+Running GSVQ:  iteration=5... 
+Running GSVQ:  iteration=6... 
+Running GSVQ:  iteration=7... 
+Running GSVQ:  iteration=8... 
+Running GSVQ:  iteration=9... 
+Running GSVQ:  iteration=10... 
+Running GSVQ:  iteration=11... 
+Running GSVQ:  iteration=12... 
+Running GSVQ:  iteration=13... 
+Running GSVQ:  iteration=14... 
+Running GSVQ:  iteration=15... 
+Running GSVQ:  iteration=16... 
+Running GSVQ:  iteration=17... 
+Running GSVQ:  iteration=18... 
+Running GSVQ:  iteration=19... 
+Running GSVQ:  iteration=20... 
+Running GSVQ:  iteration=21... 
+Running GSVQ:  iteration=22... 
+Running GSVQ:  iteration=23... 
+Running GSVQ:  iteration=24... 
+Running GSVQ:  iteration=25... 
+Running GSVQ:  iteration=26... 
+Running GSVQ:  iteration=27... 
+Running GSVQ:  iteration=28... 
+Running GSVQ:  iteration=29... 
+Running GSVQ:  iteration=30... 
+Running GSVQ:  iteration=31... 
+Running GSVQ:  iteration=32... 
+Running GSVQ:  iteration=33... 
+Running GSVQ:  iteration=34... 
+Running GSVQ:  iteration=35... 
+Running GSVQ:  iteration=36... 
+Running GSVQ:  iteration=37... 
+Running GSVQ:  iteration=38... 
+Running GSVQ:  iteration=39... 
+Running GSVQ:  iteration=40... 
+Running GSVQ:  iteration=41... 
+Running GSVQ:  iteration=42... 
+Running GSVQ:  iteration=43... 
+Running GSVQ:  iteration=44... 
+Running GSVQ:  iteration=45... 
+Running GSVQ:  iteration=46... 
+Running GSVQ:  iteration=47... 
+Running GSVQ:  iteration=48... 
+Running GSVQ:  iteration=49... 
+Running GSVQ:  iteration=50... 
+>> ### OMP1 took 87.09 m.
+>> >> >> >> >> >> >> >> ### Time elapsed since beginning: 3.41 h.
+>> Extracting training features . . .
+>> 
+2014-07-16 22:26: Extracting training features: 1 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-16 22:37: Extracting training features: 2 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-16 22:47: Extracting training features: 3 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-16 22:55: Extracting training features: 4 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-16 23:06: Extracting training features: 5 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-16 23:15: Extracting training features: 6 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-16 23:26: Extracting training features: 7 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-16 23:35: Extracting training features: 8 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-16 23:44: Extracting training features: 9 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-16 23:54: Extracting training features: 10 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-17 00:05: Extracting training features: 11 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-17 00:17: Extracting training features: 12 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-17 00:26: Extracting training features: 13 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-17 00:37: Extracting training features: 14 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-17 00:45: Extracting training features: 15 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-17 00:55: Extracting training features: 16 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-17 01:06: Extracting training features: 17 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-17 01:17: Extracting training features: 18 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-17 01:27: Extracting training features: 19 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-17 01:37: Extracting training features: 20 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-17 01:47: Extracting training features: 21 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-17 01:57: Extracting training features: 22 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-17 02:08: Extracting training features: 23 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-17 02:17: Extracting training features: 24 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-17 02:28: Extracting training features: 25 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-17 02:39: Extracting training features: 26 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-17 02:51: Extracting training features: 27 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-17 03:01: Extracting training features: 28 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-17 03:12: Extracting training features: 29 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-17 03:24: Extracting training features: 30 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-17 03:36: Extracting training features: 31 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-17 03:47: Extracting training features: 32 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-17 03:58: Extracting training features: 33 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-17 04:09: Extracting training features: 34 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-17 04:20: Extracting training features: 35 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-17 04:32: Extracting training features: 36 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-17 04:43: Extracting training features: 37 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-17 04:56: Extracting training features: 38 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-17 05:08: Extracting training features: 39 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-17 05:20: Extracting training features: 40 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-17 05:30: Extracting training features: 41 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-17 05:42: Extracting training features: 42 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-17 05:52: Extracting training features: 43 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-17 06:03: Extracting training features: 44 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-17 06:14: Extracting training features: 45 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-17 06:25: Extracting training features: 46 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-17 06:37: Extracting training features: 47 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-17 06:49: Extracting training features: 48 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-17 06:59: Extracting training features: 49 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-17 07:11: Extracting training features: 50 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-17 07:22: Extracting training features: 51 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-17 07:32: Extracting training features: 52 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-17 07:45: Extracting training features: 53 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-17 07:57: Extracting training features: 54 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-17 08:07: Extracting training features: 55 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-17 08:18: Extracting training features: 56 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-17 08:30: Extracting training features: 57 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-17 08:40: Extracting training features: 58 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-17 08:51: Extracting training features: 59 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-17 09:05: Extracting training features: 60 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-17 09:16: Extracting training features: 61 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-17 09:27: Extracting training features: 62 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-17 09:37: Extracting training features: 63 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-17 09:48: Extracting training features: 64 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-17 10:00: Extracting training features: 65 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-17 10:11: Extracting training features: 66 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-17 10:24: Extracting training features: 67 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-17 10:36: Extracting training features: 68 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-17 10:46: Extracting training features: 69 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-17 10:56: Extracting training features: 70 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-17 11:06: Extracting training features: 71 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-17 11:18: Extracting training features: 72 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-17 11:29: Extracting training features: 73 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-17 11:39: Extracting training features: 74 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-17 11:49: Extracting training features: 75 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-17 12:01: Extracting training features: 76 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-17 12:11: Extracting training features: 77 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-17 12:22: Extracting training features: 78 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-17 12:32: Extracting training features: 79 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-17 12:42: Extracting training features: 80 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-17 12:53: Extracting training features: 81 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-17 13:03: Extracting training features: 82 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-17 13:14: Extracting training features: 83 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-17 13:26: Extracting training features: 84 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-17 13:38: Extracting training features: 85 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-17 13:49: Extracting training features: 86 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-17 14:01: Extracting training features: 87 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-17 14:13: Extracting training features: 88 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-17 14:24: Extracting training features: 89 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-17 14:36: Extracting training features: 90 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-17 14:48: Extracting training features: 91 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-17 15:00: Extracting training features: 92 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-17 15:11: Extracting training features: 93 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-17 15:22: Extracting training features: 94 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-17 15:33: Extracting training features: 95 / 500: im2col... normalizing... whitening... activation... pooling... 
+2014-07-17 15:46: Extracting training features: 96 / 500: im2col... 

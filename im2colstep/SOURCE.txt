@@ -1,0 +1,4 @@
+http://stackoverflow.com/questions/15730776/matlab-fast-sliding-windows-with-predefined-overlap-im2col-sliding-matlab
+
+https://code.google.com/p/retarget-toolkit/source/browse/trunk/Matlab/Saliency/k-svd/ksvdbox13/private/
+
