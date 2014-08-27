@@ -1,6 +1,9 @@
 % processing DAGM matlab dataset
 % reference: A. Coates' sc_vq_demo.m
 
+%%% Aug 27
+% - now using git version control
+
 %%% Jul 21
 % - TODO: figure out how to use im2colstep --> done, need to compile: mex
 % im2colstep.c
