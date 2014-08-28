@@ -11,7 +11,7 @@
 % Jul 17
 % after discussion with Daniel, we decided to:
 % - change the random patch generator into more deterministic way
-% - rotate defect images to obtain total of 150*4 defect data
+% + rotate defect images to obtain total of 150*4 defect data
 % - extract 10 patches from defect areas in the images each, also for the 3
 % rotated images
 % - extract ND:D 10:1 patches
@@ -63,21 +63,39 @@ f11b = load([DATA_DIR 'dagm2007_class01_def_rot90_img_only.mat']);
 f11c = load([DATA_DIR 'dagm2007_class01_def_rot180_img_only.mat']);
 f11d = load([DATA_DIR 'dagm2007_class01_def_rot270_img_only.mat']);
 
-% f2 = load([DATA_DIR 'dagm2007_class02_ndef.mat']);
-% f12 = load([DATA_DIR 'dagm2007_class02_def.mat']);
 fprintf('### Loading took %.2f s.\n', toc(time_loading));
 
-%%% 150 defect and 150 non defect data for once.
-% trainX = [f1.data(1:150,:); f2.data(1:150,:); f11.data; f12.data];
-% trainY = double([f1.label(1:150,:); f2.label(1:150,:); f11.label; f12.label]);
+trainX = [f1.data; f11.data; f11b.data; f11c.data; f11d.data];
+trainY = double([f1.label; f11.label; f11b.label; f11c.label; f11d.label]);
 
-%trainX = [f1.data(1:150,:); f11.data];          %TODO: still 150
-%trainY = double([f1.label(1:150,:); f11.label]);
+% dirty hack --> this is struct of array. should be array of structs
+defectPos.a = [ zeros(size(f1.data,1),1); ...
+    f11.defectPos.semiMajorAxis; ...
+    f11.defectPos.semiMajorAxis; ...
+    f11.defectPos.semiMajorAxis; ...
+    f11.defectPos.semiMajorAxis ];
+defectPos.b = [ zeros(size(f1.data,1),1); ...
+    f11.defectPos.semiMinorAxis; ... 
+    f11.defectPos.semiMinorAxis; ... 
+    f11.defectPos.semiMinorAxis; ... 
+    f11.defectPos.semiMinorAxis ];
+defectPos.phi = [ zeros(size(f1.data,1),1); ...
+    f11.defectPos.rotationAngle; ...
+    f11.defectPos.rotationAngle; ...
+    f11.defectPos.rotationAngle; ...
+    f11.defectPos.rotationAngle ];
+defectPos.x = [ zeros(size(f1.data,1),1); ...
+    f11.defectPos.ellipsoidCenterX; ...
+    f11.defectPos.ellipsoidCenterX; ...
+    f11.defectPos.ellipsoidCenterX; ...
+    f11.defectPos.ellipsoidCenterX ];
+defectPos.y = [ zeros(size(f1.data,1),1); ...
+    f11.defectPos.ellipsoidCenterY; ...
+    f11.defectPos.ellipsoidCenterY; ...
+    f11.defectPos.ellipsoidCenterY; ...
+    f11.defectPos.ellipsoidCenterY ];
 
-trainX = [f1.data; f11.data];
-trainY = double([f1.label; f11.label]);
-
-clear f1 f2 f11 f12;
+% clear f1 f2 f11 f12;
 fprintf('data length = %d\n', size(trainX,1));
 
 %%% Extracting test data from training data begin
@@ -96,9 +114,16 @@ if separateTestFromTrain
     % remove original rows
     trainX(randomIdxs,:) = [];
     trainY(randomIdxs,:) = [];
+    
+    % dirty hack
+    defectPos.a(randomIdxs) = [];
+    defectPos.b(randomIdxs) = [];
+    defectPos.phi(randomIdxs) = [];
+    defectPos.x(randomIdxs) = [];
+    defectPos.y(randomIdxs) = [];
 end
 %%% extracting end
- 
+
 time_patching = tic;
 patches = zeros(numPatches, rfSize*rfSize);
 
@@ -108,7 +133,8 @@ rr = random('unid', IMG_DIM(1) - rfSize + 1, numPatches);
 cc = random('unid', IMG_DIM(2) - rfSize + 1, numPatches);
 xx = random('unid', size(trainX, 1), numPatches);
 
-%%% Extracting random patches from random images
+%%% Extracting random patches from random images to obtain dictionary -->
+%%% TODO: finish this!!!!
 for i=1:numPatches
     if (mod(i,1000) == 0) fprintf('extracting patch %d of %d\n', i, numPatches); end
     if (mod(i,50000) == 0) fprintf('### Time elapsed since beginning: %.2f m.\n', toc(time_begin)/60); end
@@ -123,6 +149,8 @@ for i=1:numPatches
     patches(i,:) = singlepatch(:)';
 end
 fprintf('### Patching took %.2f s.\n', toc(time_patching));
+
+clear f1 f2 f11 f12;
 
 profsave(profile('info'), [PROFILER_DIR 'profile_' TIMESTAMP_BEGINNING]);
 profile off;
