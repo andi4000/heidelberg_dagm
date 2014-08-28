@@ -5,8 +5,7 @@
 % - now using git version control
 
 %%% Jul 21
-% - TODO: figure out how to use im2colstep --> done, need to compile: mex
-% im2colstep.c
+% + figure out how to use im2colstep --> done, need to compile: mex im2colstep.c
 % - TODO: deterministic patches extraction
 
 % Jul 17
@@ -56,9 +55,13 @@ addpath im2colstep;
 
 fprintf('loading dataset . . .\n');
 time_loading = tic;
-% class 01
+
+%%% loading class 01
 f1 = load([DATA_DIR 'dagm2007_class01_ndef.mat']);
 f11 = load([DATA_DIR 'dagm2007_class01_def.mat']);
+f11b = load([DATA_DIR 'dagm2007_class01_def_rot90_img_only.mat']);
+f11c = load([DATA_DIR 'dagm2007_class01_def_rot180_img_only.mat']);
+f11d = load([DATA_DIR 'dagm2007_class01_def_rot270_img_only.mat']);
 
 % f2 = load([DATA_DIR 'dagm2007_class02_ndef.mat']);
 % f12 = load([DATA_DIR 'dagm2007_class02_def.mat']);
@@ -95,7 +98,7 @@ if separateTestFromTrain
     trainY(randomIdxs,:) = [];
 end
 %%% extracting end
-
+ 
 time_patching = tic;
 patches = zeros(numPatches, rfSize*rfSize);
 
@@ -105,6 +108,7 @@ rr = random('unid', IMG_DIM(1) - rfSize + 1, numPatches);
 cc = random('unid', IMG_DIM(2) - rfSize + 1, numPatches);
 xx = random('unid', size(trainX, 1), numPatches);
 
+%%% Extracting random patches from random images
 for i=1:numPatches
     if (mod(i,1000) == 0) fprintf('extracting patch %d of %d\n', i, numPatches); end
     if (mod(i,50000) == 0) fprintf('### Time elapsed since beginning: %.2f m.\n', toc(time_begin)/60); end
@@ -152,7 +156,7 @@ time_feature = tic;
 fprintf('### Time elapsed since beginning: %.2f h.\n', toc(time_begin)/3600);
 fprintf('Extracting training features . . .\n');
 trainXC = extract_features(trainX, dictionary, rfSize, ...
-                           IMG_DIM, M,P, encoder, encParam);
+                           IMG_DIM, M,P, encoder, encParam, patchStride);
 %clear trainX;
 fprintf('### Extracting training features took %.2f h.\n', toc(time_feature)/3600);
 
@@ -180,7 +184,7 @@ fprintf('Train Accuracy %f%%\n', 100* (1 - sum(labels ~= trainY) / length(trainY
 time_features_testing = tic;
 fprintf('### Time elapsed since beginning: %.2f h.\n', toc(time_begin)/3600);
 testXC = extract_features(testX, dictionary, rfSize, ...
-                          IMG_DIM, M,P, encoder, encParam);
+                          IMG_DIM, M,P, encoder, encParam, patchStride);
 %clear testX;
 fprintf('### Extracting testing features took %.2f h.\n', toc(time_feature_testing)/3600);
 
