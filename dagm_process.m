@@ -212,7 +212,9 @@ fprintf('### Patching took %.2f s.\n', toc(time_patching));
 
 profsave(profile('info'), [PROFILER_DIR 'profile_' TIMESTAMP_BEGINNING]);
 profile off;
-return;
+% return; %DEBUG: stop execution here
+
+save(['before_patch_normalization_' TIMESTAMP_BEGINNING '.mat'], '-v7.3')
 
 % normalize for contrast
 patches = bsxfun(@rdivide, bsxfun(@minus, patches, mean(patches,2)), sqrt(var(patches,[],2)+10));
@@ -224,7 +226,7 @@ M = mean(patches);
 P = V * diag(sqrt(1./(diag(D) + 0.1))) * V';
 patches = bsxfun(@minus, patches, M) * P;
 
-save -v7.3 before_omp1.mat
+save(['before_omp1_' TIMESTAMP_BEGINNING '.mat'], '-v7.3')
 
 % run training
 time_omp1 = tic;
@@ -254,7 +256,7 @@ trainXCs = bsxfun(@rdivide, bsxfun(@minus, trainXC, trainXC_mean), trainXC_sd);
 %clear trainXC;
 trainXCs = [trainXCs, ones(size(trainXCs,1),1)]; % intercept term
 
-save -v7.3 before_train_svm.mat;
+save(['before_train_svm_' TIMESTAMP_BEGINNING '.mat'], '-v7.3')
 
 % train classifier using SVM
 fprintf('### Time elapsed since beginning: %.2f h.\n', toc(time_begin)/3600);
