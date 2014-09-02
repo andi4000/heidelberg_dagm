@@ -145,7 +145,9 @@ for i=1:numPatches
     if (mod(i,1000) == 0) fprintf('extracting patch %d of %d\n', i, numPatches); end
     if (mod(i,50000) == 0) fprintf('### Time elapsed since beginning: %.2f m.\n', toc(time_begin)/60); end
     
-    while true
+    c = 0;
+    r = 0;
+    while (c == 0 && r == 0)
         idx = random('unid', size(trainX, 1));
 %         trainY(idx)
         if (trainY(idx) == 1 && countND < numNDefPatches)
@@ -181,8 +183,8 @@ for i=1:numPatches
             maxys = ceil(max(ys));
             
             % limits
-            if (minys < 0) minys = 0; end
-            if (minxs < 0) minxs = 0; end
+            if (minys < 1) minys = 1; end
+            if (minxs < 1) minxs = 1; end
             if (maxxs > IMG_DIM(1)) maxxs = IMG_DIM(1); end
             if (maxys > IMG_DIM(2)) maxys = IMG_DIM(2); end
             
