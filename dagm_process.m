@@ -26,7 +26,7 @@ system('mkdir -p profiler');
 PROFILER_DIR = [pwd '/profiler/'];
 TIMESTAMP_BEGINNING = datestr(now, 'yyyy.mm.dd-HH.MM');
 
-profile on
+% profile on
 time_begin = tic;
 
 DATA_DIR = '../../dataset_for_matlab/';
@@ -37,7 +37,7 @@ numTestData = 100;
 
 %%% Parameters
 numBases = 2400         % number of features
-numPatches = 20       % with 50k, train accuracy 97% testing accuracy 51%
+numPatches = 50000       % with 50k, train accuracy 97% testing accuracy 51%
 percentDefectPatches = 1/11 % to reach ratio 10:1 of ND:Defect
 
 numDefPatches = ceil(numPatches * percentDefectPatches);
@@ -147,7 +147,7 @@ for i=1:numPatches
     
     while true
         idx = random('unid', size(trainX, 1));
-        trainY(idx)
+%         trainY(idx)
         if (trainY(idx) == 1 && countND < numNDefPatches)
             countND = countND + 1;
             r = random('unid', IMG_DIM(1) - rfSize + 1);
@@ -180,10 +180,16 @@ for i=1:numPatches
             minys = floor(min(ys));
             maxys = ceil(max(ys));
             
+            % limits
+            if (minys < 0) minys = 0; end
+            if (minxs < 0) minxs = 0; end
+            if (maxxs > IMG_DIM(1)) maxxs = IMG_DIM(1); end
+            if (maxys > IMG_DIM(2)) maxys = IMG_DIM(2); end
+            
             if (maxys - minys > rfSize)
                 r = randi([minys maxys-rfSize+1]);
             else
-                r = randi([minys maxys]);
+                r = randi([minys maxys]);   % if defect area is smaller than rfSize/window
             end
             
             if (maxxs - minxs > rfSize)
@@ -210,8 +216,8 @@ fprintf('### Patching took %.2f s.\n', toc(time_patching));
 
 % clear f1 f2 f11 f12;
 
-profsave(profile('info'), [PROFILER_DIR 'profile_' TIMESTAMP_BEGINNING]);
-profile off;
+% profsave(profile('info'), [PROFILER_DIR 'profile_' TIMESTAMP_BEGINNING]);
+% profile off;
 % return; %DEBUG: stop execution here
 
 save(['before_patch_normalization_' TIMESTAMP_BEGINNING '.mat'], '-v7.3')
