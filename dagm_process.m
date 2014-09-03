@@ -222,7 +222,7 @@ fprintf('### Patching took %.2f s.\n', toc(time_patching));
 % profile off;
 % return; %DEBUG: stop execution here
 
-save(['before_patch_normalization_' TIMESTAMP_BEGINNING '.mat'], '-v7.3')
+save(['w01_before_patch_normalization_' TIMESTAMP_BEGINNING '.mat'], '-v7.3')
 
 % normalize for contrast
 patches = bsxfun(@rdivide, bsxfun(@minus, patches, mean(patches,2)), sqrt(var(patches,[],2)+10));
@@ -234,7 +234,7 @@ M = mean(patches);
 P = V * diag(sqrt(1./(diag(D) + 0.1))) * V';
 patches = bsxfun(@minus, patches, M) * P;
 
-save(['before_omp1_' TIMESTAMP_BEGINNING '.mat'], '-v7.3')
+save(['w02_before_omp1_' TIMESTAMP_BEGINNING '.mat'], '-v7.3')
 
 % run training
 time_omp1 = tic;
@@ -242,6 +242,8 @@ fprintf('### Time elapsed since beginning: %.2f h.\n', toc(time_begin)/3600);
 fprintf('Running OMP1 . . .\n');
 dictionary = run_omp1(patches, numBases, 50);
 fprintf('### OMP1 took %.2f m.\n', toc(time_omp1)/60);
+
+save(['w03_dictionary_' TIMESTAMP_BEGINNING '.mat'], 'dictionary', '-v7.3');
 
 % show results of training
 % fprintf('Showing centroids . . .\n');
@@ -264,7 +266,7 @@ trainXCs = bsxfun(@rdivide, bsxfun(@minus, trainXC, trainXC_mean), trainXC_sd);
 %clear trainXC;
 trainXCs = [trainXCs, ones(size(trainXCs,1),1)]; % intercept term
 
-save(['before_train_svm_' TIMESTAMP_BEGINNING '.mat'], '-v7.3')
+save(['w04_before_train_svm_' TIMESTAMP_BEGINNING '.mat'], '-v7.3')
 
 % train classifier using SVM
 fprintf('### Time elapsed since beginning: %.2f h.\n', toc(time_begin)/3600);
