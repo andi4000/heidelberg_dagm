@@ -26,6 +26,18 @@ system('mkdir -p profiler');
 PROFILER_DIR = [pwd '/profiler/'];
 TIMESTAMP_BEGINNING = datestr(now, 'yyyy.mm.dd-HH.MM');
 
+system('mkdir -p results');
+recapFilename = ['result_' TIMESTAMP_BEGINNING '.txt'];
+recapFile = [pwd 'results/' recapFilename];
+recapFileID = fopen(recapFile, 'w');
+
+%for recapFile
+[tmp,gitCommitID] = system('git rev-parse HEAD');
+clear tmp;
+
+fprintf('############## Unsupervised Feature Learning Trial\n');
+fprintf('############## Beginning time: %s\n', TIMESTAMP_BEGINNING);
+
 % profile on
 time_begin = tic;
 
@@ -33,7 +45,7 @@ DATA_DIR = '../../dataset_for_matlab/';
 IMG_DIM = [512 512];
 
 separateTestFromTrain = true;
-numTestData = 100;
+numTestData = 100; %TODO: should be percentage of the total data available?
 
 %%% Parameters
 numBases = 2400         % number of features
@@ -53,6 +65,21 @@ encoder='thresh'
 encParam=alpha %% Use soft threshold encoder.
 
 L = 0.01 % SVM param
+
+
+%for recapFile
+fprintf(recapFileID, '#### Trial at %s\n', TIMESTAMP_BEGINNING);
+fprintf(recapFileID, 'Git commit ID: %s\n\n', gitCommitID);
+fprintf(recapFileID, 'separateTestFromTrain = %d\n', separateTestFromTrain);
+fprintf(recapFileID, 'numTestData = %d\n', numTestData);
+fprintf(recapFileID, 'numBases = %d\n', numBases);
+fprintf(recapFileID, 'numPatches = %d\n', numPatches);
+fprintf(recapFileID, 'numDefPatches = %d\n', numDefPatches);
+fprintf(recapFileID, 'numNDefPatches = %d\n\n', numNDefPatches);
+fprintf(recapFileID, 'rfSize = %d\n', rfSize);
+fprintf(recapFileID, 'patchStride = [%d %d]\n\n', patchStride(1), patchStride(2));
+fprintf(recapFileID, 'alpha = %.2f\nlambda = %.2f\n', alpha, lambda);
+fprintf(recapFileID, 'encoder = %s\nencParam = %.2f\n\n', encoder, encParam);
 
 % adding external functions
 addpath minFunc;
@@ -102,6 +129,8 @@ defectPos.y = [ zeros(size(f1.data,1),1); ...
 
 clear f1 f2 f11 f12;
 fprintf('data length = %d\n', size(trainX,1));
+
+fprintf(recapFileID, 'data length = %d\n\n', size(trainX,1));
 
 %%% Extracting test data from training data begin
 if separateTestFromTrain
@@ -280,6 +309,7 @@ theta = train_svm(trainXCs, trainY, 1/L);
 % test and print results
 [val,labels] = max(trainXCs*theta, [], 2);
 fprintf('Train Accuracy %f%%\n', 100* (1 - sum(labels ~= trainY) / length(trainY)));
+fprintf(recapFileID, 'Train Accuracy %f%%\n\n', 100* (1 - sum(labels ~= trainY) / length(trainY)));
 
 %%%% TESTING
 % compute testing features and standardize
@@ -297,6 +327,8 @@ testXCs = [testXCs, ones(size(testXCs,1),1)];
 % test and print result
 [val,labels] = max(testXCs*theta, [], 2);
 fprintf('Test accuracy %f%%\n', 100 * (1 - sum(labels ~= testY) / length(testY)));
-
+fprintf(recapFileID, 'Test accuracy %f%%\n\n', 100 * (1 - sum(labels ~= testY) / length(testY)));
 
 fprintf('### Whole process took %.2f hours.\n', toc(time_begin)/3600);
+fprintf(recapFileID, 'Whole process took %.2f hours.\n', toc(time_begin)/3600);
+fclose(recapFileID);
