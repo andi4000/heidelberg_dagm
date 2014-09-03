@@ -27,8 +27,8 @@ PROFILER_DIR = [pwd '/profiler/'];
 TIMESTAMP_BEGINNING = datestr(now, 'yyyy.mm.dd-HH.MM');
 
 system('mkdir -p results');
-recapFilename = ['result_' TIMESTAMP_BEGINNING '.txt'];
-recapFile = [pwd 'results/' recapFilename];
+recapFilename = ['result_recap_' TIMESTAMP_BEGINNING '.txt'];
+recapFile = [pwd '/results/' recapFilename];
 recapFileID = fopen(recapFile, 'w');
 
 %for recapFile
