@@ -60,9 +60,15 @@ for i=1:size(X,1)
     % patches is now the data matrix of activations for each patch
 
     % reshape to 2*numBases-channel image
-    prows = IMG_DIM(1)-rfSize+1;
-    pcols = IMG_DIM(2)-rfSize+1;
-    patches = reshape(patches, prows, pcols, numBases*2);
+    %%% quick and dirty
+    if stride
+	prows = IMG_DIM(1) / stride(1) - 1; %TODO: mathematically incorrect
+	pcols = IMG_DIM(2) / stride(2) - 1; %TODO: 
+    else
+    	prows = IMG_DIM(1)-rfSize+1;
+    	pcols = IMG_DIM(2)-rfSize+1;
+    end 
+   patches = reshape(patches, prows, pcols, numBases*2);
 
     % pool over quadrants
     fprintf('pooling... ');
