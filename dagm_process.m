@@ -22,8 +22,8 @@
 clear all;
 close all;
 
-note = ['with stride of [16 16], total patch = 961/img\n'
-	'total possible patches = 961*1500 = ca. 1.45million.\n'
+note = ['with stride of [16 16], total patch = 961/img\n' ...
+	'total possible patches = 961*1500 = ca. 1.45million.\n' ...
 	'this trial is to see effect of numPatches\n'];
 
 system('mkdir -p profiler');
