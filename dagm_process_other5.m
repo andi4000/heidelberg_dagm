@@ -24,7 +24,7 @@ close all;
 
 note = ['with stride of [16 16], total patch = 961/img\n'
 	'total possible patches = 961*1500 = ca. 1.45million.\n'
-	'this trial is to see effect of numPatches\n'];
+	'this trial is to see effect of num features\n'];
 
 system('mkdir -p profiler');
 PROFILER_DIR = [pwd '/profiler/'];
@@ -52,7 +52,7 @@ separateTestFromTrain = true;
 numTestData = 100; %TODO: should be percentage of the total data available?
 
 %%% Parameters
-numBases = 2400         % number of features
+numBases = 4800         % number of features
 numPatches = 800000       % with 50k, train accuracy 97% testing accuracy 51%
 percentDefectPatches = 1/11 % to reach ratio 10:1 of ND:Defect
 
