@@ -53,7 +53,7 @@ numTestData = 100; %TODO: should be percentage of the total data available?
 
 %%% Parameters
 numBases = 3200         % number of features
-numPatches = 800000       % with 50k, train accuracy 97% testing accuracy 51%
+numPatches = 250000       % with 50k, train accuracy 97% testing accuracy 51%
 percentDefectPatches = 1/11 % to reach ratio 10:1 of ND:Defect
 
 numDefPatches = ceil(numPatches * percentDefectPatches);
