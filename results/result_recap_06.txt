@@ -1,0 +1,26 @@
+#### Trial at 2014.09.03-18.07
+Git commit ID: 5b8af8566e30a8b71ad34cedf649a2d40c98f176
+
+
+separateTestFromTrain = 1
+numTestData = 100
+numBases = 2400
+numPatches = 500000
+numDefPatches = 45455
+numNDefPatches = 454545
+
+rfSize = 32
+patchStride = [16 16]
+
+alpha = 0.25
+lambda = 1.00
+encoder = thresh
+encParam = 0.25
+
+data length = 1600
+
+Train Accuracy 100.000000%
+
+Test accuracy 68.000000%
+
+Whole process took 2.28 hours.

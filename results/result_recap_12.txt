@@ -1,0 +1,28 @@
+##### Trial at 2014.09.04-19.15
+File name: .m
+Git commit ID: b2d40d9da375c162ac30b5ae006580116c6356c4
+
+Note = 
+this trial is to see effect of num features\n
+
+separateTestFromTrain = 1
+numTestData = 100
+numBases = 4000
+numPatches = 250000
+numDefPatches = 22728
+numNDefPatches = 227272
+
+rfSize = 32
+patchStride = [16 16]
+
+alpha = 0.25
+lambda = 1.00
+encoder = thresh
+encParam = 0.25
+
+data length = 1600
+
+Train Accuracy 100.000%
+Test Accuracy = 64.000%
+
+Whole process took 1.90 hours.

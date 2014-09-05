@@ -1,0 +1,28 @@
+##### Trial at 2014.09.03-22.03
+File name: .m
+Git commit ID: 6372a9bd2beb8c9383a556065e4ed450286b1727
+
+Note = 
+this trial is to see if binary label makes any difference\n
+
+separateTestFromTrain = 1
+numTestData = 100
+numBases = 2400
+numPatches = 500000
+numDefPatches = 45455
+numNDefPatches = 454545
+
+rfSize = 32
+patchStride = [16 16]
+
+alpha = 0.25
+lambda = 1.00
+encoder = thresh
+encParam = 0.25
+
+data length = 1600
+
+Train Accuracy 62.933%
+Test Accuracy = 56.000%
+
+Whole process took 2.14 hours.

@@ -1,0 +1,28 @@
+##### Trial at 2014.09.04-15.44
+File name: .m
+Git commit ID: b2d40d9da375c162ac30b5ae006580116c6356c4
+
+Note = 
+with stride of [16 16], total patch = 961/img\ntotal possible patches = 961*1500 = ca. 1.45million.\nthis trial is to see effect of numPatches
+
+separateTestFromTrain = 1
+numTestData = 100
+numBases = 2400
+numPatches = 400000
+numDefPatches = 36364
+numNDefPatches = 363636
+
+rfSize = 32
+patchStride = [16 16]
+
+alpha = 0.25
+lambda = 1.00
+encoder = thresh
+encParam = 0.25
+
+data length = 1600
+
+Train Accuracy 100.000%
+Test Accuracy = 62.000%
+
+Whole process took 1.90 hours.
