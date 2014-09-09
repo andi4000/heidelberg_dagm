@@ -22,7 +22,7 @@
 clear all;
 close all;
 
-note = ['now decreasing numBases (features)'];
+note = ['window 16x16 with stride 8x8 seems promising, now testing ndef:def ratio'];
 
 system('mkdir -p profiler');
 PROFILER_DIR = [pwd '/profiler/'];
@@ -50,15 +50,15 @@ separateTestFromTrain = true;
 numTestData = 100; %TODO: should be percentage of the total data available?
 
 %%% Parameters
-numBases = 1600         % number of features
+numBases = 2400         % number of features
 numPatches = 400000       
-percentDefectPatches = 1/11 % to reach ratio 10:1 of ND:Defect
+percentDefectPatches = 1/4
 
 numDefPatches = ceil(numPatches * percentDefectPatches);
 numNDefPatches = numPatches - numDefPatches;
 
-rfSize = 32             % receptive field size (window size)
-patchStride = [16 16]   % for im2colstep
+rfSize = 16             % receptive field size (window size)
+patchStride = [8 8]   % for im2colstep
 
 alpha = 0.25  %% CV-chosen value for soft-threshold function.
 lambda = 1.0  %% CV-chosen sparse coding penalty.
