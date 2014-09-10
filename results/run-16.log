@@ -1,0 +1,537 @@
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2014 The MathWorks, Inc.
+                    R2014a (8.3.0.532) 64-bit (glnxa64)
+                             February 11, 2014
+
+
+	This is a Classroom License for instructional use only.
+	Research and commercial use is prohibited.
+ 
+To get started, type one of these: helpwin, helpdesk, or demo.
+For product information, visit www.mathworks.com.
+ 
+>> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> ############## Unsupervised Feature Learning Trial
+>> ############## Beginning time: 2014.09.05-16.12
+>> >> >> >> >> >> >> >> >> >> >> >> 
+numBases =
+
+        2400
+
+>> 
+numPatches =
+
+      400000
+
+>> 
+percentDefectPatches =
+
+    0.0909
+
+>> >> >> >> >> 
+rfSize =
+
+    32
+
+>> 
+patchStride =
+
+    16    16
+
+>> >> 
+alpha =
+
+    0.2500
+
+>> 
+lambda =
+
+     1
+
+>> >> 
+encoder =
+
+thresh
+
+>> 
+encParam =
+
+    0.2500
+
+>> >> 
+L =
+
+    0.0100
+
+>> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> loading dataset . . .
+>> >> >> >> >> >> >> >> >> >> ### Loading took 4.91 s.
+>> >> >> >> >> >> >> >> >> >> >> >> >> data length = 1600
+>> >> >> >> >> separating 100 test data from training data . . .
+>> >> >> >> >> >> >> >> >> >> >> >> >> >> >> extracting patch 1000 of 400000
+extracting patch 2000 of 400000
+extracting patch 3000 of 400000
+extracting patch 4000 of 400000
+extracting patch 5000 of 400000
+extracting patch 6000 of 400000
+extracting patch 7000 of 400000
+extracting patch 8000 of 400000
+extracting patch 9000 of 400000
+extracting patch 10000 of 400000
+extracting patch 11000 of 400000
+extracting patch 12000 of 400000
+extracting patch 13000 of 400000
+extracting patch 14000 of 400000
+extracting patch 15000 of 400000
+extracting patch 16000 of 400000
+extracting patch 17000 of 400000
+extracting patch 18000 of 400000
+extracting patch 19000 of 400000
+extracting patch 20000 of 400000
+extracting patch 21000 of 400000
+extracting patch 22000 of 400000
+extracting patch 23000 of 400000
+extracting patch 24000 of 400000
+extracting patch 25000 of 400000
+extracting patch 26000 of 400000
+extracting patch 27000 of 400000
+extracting patch 28000 of 400000
+extracting patch 29000 of 400000
+extracting patch 30000 of 400000
+extracting patch 31000 of 400000
+extracting patch 32000 of 400000
+extracting patch 33000 of 400000
+extracting patch 34000 of 400000
+extracting patch 35000 of 400000
+extracting patch 36000 of 400000
+extracting patch 37000 of 400000
+extracting patch 38000 of 400000
+extracting patch 39000 of 400000
+extracting patch 40000 of 400000
+extracting patch 41000 of 400000
+extracting patch 42000 of 400000
+extracting patch 43000 of 400000
+extracting patch 44000 of 400000
+extracting patch 45000 of 400000
+extracting patch 46000 of 400000
+extracting patch 47000 of 400000
+extracting patch 48000 of 400000
+extracting patch 49000 of 400000
+extracting patch 50000 of 400000
+### Time elapsed since beginning: 4.54 m.
+extracting patch 51000 of 400000
+extracting patch 52000 of 400000
+extracting patch 53000 of 400000
+extracting patch 54000 of 400000
+extracting patch 55000 of 400000
+extracting patch 56000 of 400000
+extracting patch 57000 of 400000
+extracting patch 58000 of 400000
+extracting patch 59000 of 400000
+extracting patch 60000 of 400000
+extracting patch 61000 of 400000
+extracting patch 62000 of 400000
+extracting patch 63000 of 400000
+extracting patch 64000 of 400000
+extracting patch 65000 of 400000
+extracting patch 66000 of 400000
+extracting patch 67000 of 400000
+extracting patch 68000 of 400000
+extracting patch 69000 of 400000
+extracting patch 70000 of 400000
+extracting patch 71000 of 400000
+extracting patch 72000 of 400000
+extracting patch 73000 of 400000
+extracting patch 74000 of 400000
+extracting patch 75000 of 400000
+extracting patch 76000 of 400000
+extracting patch 77000 of 400000
+extracting patch 78000 of 400000
+extracting patch 79000 of 400000
+extracting patch 80000 of 400000
+extracting patch 81000 of 400000
+extracting patch 82000 of 400000
+extracting patch 83000 of 400000
+extracting patch 84000 of 400000
+extracting patch 85000 of 400000
+extracting patch 86000 of 400000
+extracting patch 87000 of 400000
+extracting patch 88000 of 400000
+extracting patch 89000 of 400000
+extracting patch 90000 of 400000
+extracting patch 91000 of 400000
+extracting patch 92000 of 400000
+extracting patch 93000 of 400000
+extracting patch 94000 of 400000
+extracting patch 95000 of 400000
+extracting patch 96000 of 400000
+extracting patch 97000 of 400000
+extracting patch 98000 of 400000
+extracting patch 99000 of 400000
+extracting patch 100000 of 400000
+### Time elapsed since beginning: 8.81 m.
+extracting patch 101000 of 400000
+extracting patch 102000 of 400000
+extracting patch 103000 of 400000
+extracting patch 104000 of 400000
+extracting patch 105000 of 400000
+extracting patch 106000 of 400000
+extracting patch 107000 of 400000
+extracting patch 108000 of 400000
+extracting patch 109000 of 400000
+extracting patch 110000 of 400000
+extracting patch 111000 of 400000
+extracting patch 112000 of 400000
+extracting patch 113000 of 400000
+extracting patch 114000 of 400000
+extracting patch 115000 of 400000
+extracting patch 116000 of 400000
+extracting patch 117000 of 400000
+extracting patch 118000 of 400000
+extracting patch 119000 of 400000
+extracting patch 120000 of 400000
+extracting patch 121000 of 400000
+extracting patch 122000 of 400000
+extracting patch 123000 of 400000
+extracting patch 124000 of 400000
+extracting patch 125000 of 400000
+extracting patch 126000 of 400000
+extracting patch 127000 of 400000
+extracting patch 128000 of 400000
+extracting patch 129000 of 400000
+extracting patch 130000 of 400000
+extracting patch 131000 of 400000
+extracting patch 132000 of 400000
+extracting patch 133000 of 400000
+extracting patch 134000 of 400000
+extracting patch 135000 of 400000
+extracting patch 136000 of 400000
+extracting patch 137000 of 400000
+extracting patch 138000 of 400000
+extracting patch 139000 of 400000
+extracting patch 140000 of 400000
+extracting patch 141000 of 400000
+extracting patch 142000 of 400000
+extracting patch 143000 of 400000
+extracting patch 144000 of 400000
+extracting patch 145000 of 400000
+extracting patch 146000 of 400000
+extracting patch 147000 of 400000
+extracting patch 148000 of 400000
+extracting patch 149000 of 400000
+extracting patch 150000 of 400000
+### Time elapsed since beginning: 13.19 m.
+extracting patch 151000 of 400000
+extracting patch 152000 of 400000
+extracting patch 153000 of 400000
+extracting patch 154000 of 400000
+extracting patch 155000 of 400000
+extracting patch 156000 of 400000
+extracting patch 157000 of 400000
+extracting patch 158000 of 400000
+extracting patch 159000 of 400000
+extracting patch 160000 of 400000
+extracting patch 161000 of 400000
+extracting patch 162000 of 400000
+extracting patch 163000 of 400000
+extracting patch 164000 of 400000
+extracting patch 165000 of 400000
+extracting patch 166000 of 400000
+extracting patch 167000 of 400000
+extracting patch 168000 of 400000
+extracting patch 169000 of 400000
+extracting patch 170000 of 400000
+extracting patch 171000 of 400000
+extracting patch 172000 of 400000
+extracting patch 173000 of 400000
+extracting patch 174000 of 400000
+extracting patch 175000 of 400000
+extracting patch 176000 of 400000
+extracting patch 177000 of 400000
+extracting patch 178000 of 400000
+extracting patch 179000 of 400000
+extracting patch 180000 of 400000
+extracting patch 181000 of 400000
+extracting patch 182000 of 400000
+extracting patch 183000 of 400000
+extracting patch 184000 of 400000
+extracting patch 185000 of 400000
+extracting patch 186000 of 400000
+extracting patch 187000 of 400000
+extracting patch 188000 of 400000
+extracting patch 189000 of 400000
+extracting patch 190000 of 400000
+extracting patch 191000 of 400000
+extracting patch 192000 of 400000
+extracting patch 193000 of 400000
+extracting patch 194000 of 400000
+extracting patch 195000 of 400000
+extracting patch 196000 of 400000
+extracting patch 197000 of 400000
+extracting patch 198000 of 400000
+extracting patch 199000 of 400000
+extracting patch 200000 of 400000
+### Time elapsed since beginning: 17.57 m.
+extracting patch 201000 of 400000
+extracting patch 202000 of 400000
+extracting patch 203000 of 400000
+extracting patch 204000 of 400000
+extracting patch 205000 of 400000
+extracting patch 206000 of 400000
+extracting patch 207000 of 400000
+extracting patch 208000 of 400000
+extracting patch 209000 of 400000
+extracting patch 210000 of 400000
+extracting patch 211000 of 400000
+extracting patch 212000 of 400000
+extracting patch 213000 of 400000
+extracting patch 214000 of 400000
+extracting patch 215000 of 400000
+extracting patch 216000 of 400000
+extracting patch 217000 of 400000
+extracting patch 218000 of 400000
+extracting patch 219000 of 400000
+extracting patch 220000 of 400000
+extracting patch 221000 of 400000
+extracting patch 222000 of 400000
+extracting patch 223000 of 400000
+extracting patch 224000 of 400000
+extracting patch 225000 of 400000
+extracting patch 226000 of 400000
+extracting patch 227000 of 400000
+extracting patch 228000 of 400000
+extracting patch 229000 of 400000
+extracting patch 230000 of 400000
+extracting patch 231000 of 400000
+extracting patch 232000 of 400000
+extracting patch 233000 of 400000
+extracting patch 234000 of 400000
+extracting patch 235000 of 400000
+extracting patch 236000 of 400000
+extracting patch 237000 of 400000
+extracting patch 238000 of 400000
+extracting patch 239000 of 400000
+extracting patch 240000 of 400000
+extracting patch 241000 of 400000
+extracting patch 242000 of 400000
+extracting patch 243000 of 400000
+extracting patch 244000 of 400000
+extracting patch 245000 of 400000
+extracting patch 246000 of 400000
+extracting patch 247000 of 400000
+extracting patch 248000 of 400000
+extracting patch 249000 of 400000
+extracting patch 250000 of 400000
+### Time elapsed since beginning: 21.96 m.
+extracting patch 251000 of 400000
+extracting patch 252000 of 400000
+extracting patch 253000 of 400000
+extracting patch 254000 of 400000
+extracting patch 255000 of 400000
+extracting patch 256000 of 400000
+extracting patch 257000 of 400000
+extracting patch 258000 of 400000
+extracting patch 259000 of 400000
+extracting patch 260000 of 400000
+extracting patch 261000 of 400000
+extracting patch 262000 of 400000
+extracting patch 263000 of 400000
+extracting patch 264000 of 400000
+extracting patch 265000 of 400000
+extracting patch 266000 of 400000
+extracting patch 267000 of 400000
+extracting patch 268000 of 400000
+extracting patch 269000 of 400000
+extracting patch 270000 of 400000
+extracting patch 271000 of 400000
+extracting patch 272000 of 400000
+extracting patch 273000 of 400000
+extracting patch 274000 of 400000
+extracting patch 275000 of 400000
+extracting patch 276000 of 400000
+extracting patch 277000 of 400000
+extracting patch 278000 of 400000
+extracting patch 279000 of 400000
+extracting patch 280000 of 400000
+extracting patch 281000 of 400000
+extracting patch 282000 of 400000
+extracting patch 283000 of 400000
+extracting patch 284000 of 400000
+extracting patch 285000 of 400000
+extracting patch 286000 of 400000
+extracting patch 287000 of 400000
+extracting patch 288000 of 400000
+extracting patch 289000 of 400000
+extracting patch 290000 of 400000
+extracting patch 291000 of 400000
+extracting patch 292000 of 400000
+extracting patch 293000 of 400000
+extracting patch 294000 of 400000
+extracting patch 295000 of 400000
+extracting patch 296000 of 400000
+extracting patch 297000 of 400000
+extracting patch 298000 of 400000
+extracting patch 299000 of 400000
+extracting patch 300000 of 400000
+### Time elapsed since beginning: 26.35 m.
+extracting patch 301000 of 400000
+extracting patch 302000 of 400000
+extracting patch 303000 of 400000
+extracting patch 304000 of 400000
+extracting patch 305000 of 400000
+extracting patch 306000 of 400000
+extracting patch 307000 of 400000
+extracting patch 308000 of 400000
+extracting patch 309000 of 400000
+extracting patch 310000 of 400000
+extracting patch 311000 of 400000
+extracting patch 312000 of 400000
+extracting patch 313000 of 400000
+extracting patch 314000 of 400000
+extracting patch 315000 of 400000
+extracting patch 316000 of 400000
+extracting patch 317000 of 400000
+extracting patch 318000 of 400000
+extracting patch 319000 of 400000
+extracting patch 320000 of 400000
+extracting patch 321000 of 400000
+extracting patch 322000 of 400000
+extracting patch 323000 of 400000
+extracting patch 324000 of 400000
+extracting patch 325000 of 400000
+extracting patch 326000 of 400000
+extracting patch 327000 of 400000
+extracting patch 328000 of 400000
+extracting patch 329000 of 400000
+extracting patch 330000 of 400000
+extracting patch 331000 of 400000
+extracting patch 332000 of 400000
+extracting patch 333000 of 400000
+extracting patch 334000 of 400000
+extracting patch 335000 of 400000
+extracting patch 336000 of 400000
+extracting patch 337000 of 400000
+extracting patch 338000 of 400000
+extracting patch 339000 of 400000
+extracting patch 340000 of 400000
+extracting patch 341000 of 400000
+extracting patch 342000 of 400000
+extracting patch 343000 of 400000
+extracting patch 344000 of 400000
+extracting patch 345000 of 400000
+extracting patch 346000 of 400000
+extracting patch 347000 of 400000
+extracting patch 348000 of 400000
+extracting patch 349000 of 400000
+extracting patch 350000 of 400000
+### Time elapsed since beginning: 30.75 m.
+extracting patch 351000 of 400000
+extracting patch 352000 of 400000
+extracting patch 353000 of 400000
+extracting patch 354000 of 400000
+extracting patch 355000 of 400000
+extracting patch 356000 of 400000
+extracting patch 357000 of 400000
+extracting patch 358000 of 400000
+extracting patch 359000 of 400000
+extracting patch 360000 of 400000
+extracting patch 361000 of 400000
+extracting patch 362000 of 400000
+extracting patch 363000 of 400000
+extracting patch 364000 of 400000
+extracting patch 365000 of 400000
+extracting patch 366000 of 400000
+extracting patch 367000 of 400000
+extracting patch 368000 of 400000
+extracting patch 369000 of 400000
+extracting patch 370000 of 400000
+extracting patch 371000 of 400000
+extracting patch 372000 of 400000
+extracting patch 373000 of 400000
+extracting patch 374000 of 400000
+extracting patch 375000 of 400000
+extracting patch 376000 of 400000
+extracting patch 377000 of 400000
+extracting patch 378000 of 400000
+extracting patch 379000 of 400000
+extracting patch 380000 of 400000
+extracting patch 381000 of 400000
+extracting patch 382000 of 400000
+extracting patch 383000 of 400000
+extracting patch 384000 of 400000
+extracting patch 385000 of 400000
+extracting patch 386000 of 400000
+extracting patch 387000 of 400000
+extracting patch 388000 of 400000
+extracting patch 389000 of 400000
+extracting patch 390000 of 400000
+extracting patch 391000 of 400000
+extracting patch 392000 of 400000
+extracting patch 393000 of 400000
+extracting patch 394000 of 400000
+extracting patch 395000 of 400000
+extracting patch 396000 of 400000
+extracting patch 397000 of 400000
+extracting patch 398000 of 400000
+extracting patch 399000 of 400000
+extracting patch 400000 of 400000
+### Time elapsed since beginning: 35.14 m.
+>> ### Patching took 2094.28 s.
+>> >> >> >> >> >> >> >> saving workspace ws01 before patch normalization..
+>> >> >> >> >> >> >> >> >> >> >> >> >> saving workspace ws02 before omp1..
+>> >> >> >> >> ### Time elapsed since beginning: 0.70 h.
+>> Running OMP1 . . .
+>> Running GSVQ:  iteration=1... 
+Running GSVQ:  iteration=2... 
+Running GSVQ:  iteration=3... 
+Running GSVQ:  iteration=4... 
+Running GSVQ:  iteration=5... 
+Running GSVQ:  iteration=6... 
+Running GSVQ:  iteration=7... 
+Running GSVQ:  iteration=8... 
+Running GSVQ:  iteration=9... 
+Running GSVQ:  iteration=10... 
+Running GSVQ:  iteration=11... 
+Running GSVQ:  iteration=12... 
+Running GSVQ:  iteration=13... 
+Running GSVQ:  iteration=14... 
+Running GSVQ:  iteration=15... 
+Running GSVQ:  iteration=16... 
+Running GSVQ:  iteration=17... 
+Running GSVQ:  iteration=18... 
+Running GSVQ:  iteration=19... 
+Running GSVQ:  iteration=20... 
+Running GSVQ:  iteration=21... 
+Running GSVQ:  iteration=22... 
+Running GSVQ:  iteration=23... 
+Running GSVQ:  iteration=24... 
+Running GSVQ:  iteration=25... 
+Running GSVQ:  iteration=26... 
+Running GSVQ:  iteration=27... 
+Running GSVQ:  iteration=28... 
+Running GSVQ:  iteration=29... 
+Running GSVQ:  iteration=30... 
+Running GSVQ:  iteration=31... 
+Running GSVQ:  iteration=32... 
+Running GSVQ:  iteration=33... 
+Running GSVQ:  iteration=34... 
+Running GSVQ:  iteration=35... 
+Running GSVQ:  iteration=36... 
+Running GSVQ:  iteration=37... 
+Running GSVQ:  iteration=38... 
+Running GSVQ:  iteration=39... 
+Running GSVQ:  iteration=40... 
+Running GSVQ:  iteration=41... 
+Running GSVQ:  iteration=42... 
+Running GSVQ:  iteration=43... 
+Running GSVQ:  iteration=44... 
+Running GSVQ:  iteration=45... 
+Running GSVQ:  iteration=46... 
+Running GSVQ:  iteration=47... 
+Running GSVQ:  iteration=48... 
+Running GSVQ:  iteration=49... 
+Running GSVQ:  iteration=50... 
+>> ### OMP1 took 49.88 m.
+>> >> saving variable ws03 dictionary _only_
+>> >> >> >> >> >> >> >> >> ### Time elapsed since beginning: 1.53 h.
+>> Extracting training features . . .
+>> 

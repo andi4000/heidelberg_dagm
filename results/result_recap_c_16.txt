@@ -1,0 +1,24 @@
+##### Trial at 2014.09.05-16.12
+File name: .m
+Git commit ID: 5e5ae8909ae19d8d6889b950aa3c2c098d50e0b0
+
+Note = 
+see if no whitening affects anything
+
+separateTestFromTrain = 1
+numTestData = 100
+numBases = 2400
+numPatches = 400000
+numDefPatches = 36364
+numNDefPatches = 363636
+
+rfSize = 32
+patchStride = [16 16]
+
+alpha = 0.25
+lambda = 1.00
+encoder = thresh
+encParam = 0.25
+
+data length = 1600
+

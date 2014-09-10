@@ -22,7 +22,7 @@
 clear all;
 close all;
 
-note = ['window 16x16 with stride 8x8 seems promising, now testing ndef:def ratio'];
+note = ['good base: 16x16 window, 8x8 stride, 800k patches, 1:3 def:ndef ratio. now checking numBases'];
 
 system('mkdir -p profiler');
 PROFILER_DIR = [pwd '/profiler/'];
@@ -51,7 +51,7 @@ numTestData = 100; %TODO: should be percentage of the total data available?
 
 %%% Parameters
 numBases = 2400         % number of features
-numPatches = 400000       
+numPatches = 800000       
 percentDefectPatches = 1/4
 
 numDefPatches = ceil(numPatches * percentDefectPatches);
@@ -256,7 +256,7 @@ fprintf('### Patching took %.2f s.\n', toc(time_patching));
 % return; %DEBUG: stop execution here
 
 fprintf('saving workspace ws01 before patch normalization..\n');
-save(['ws01_before_patch_normalization_' TIMESTAMP_BEGINNING '.mat'], '-v7.3')
+save([TIMESTAMP_BEGINNING '_ws01_before_patch_normalization.mat'], '-v7.3')
 
 % normalize for contrast
 patches = bsxfun(@rdivide, bsxfun(@minus, patches, mean(patches,2)), sqrt(var(patches,[],2)+10));
@@ -269,7 +269,7 @@ P = V * diag(sqrt(1./(diag(D) + 0.1))) * V';
 patches = bsxfun(@minus, patches, M) * P;
 
 fprintf('saving workspace ws02 before omp1..\n');
-save(['ws02_before_omp1_' TIMESTAMP_BEGINNING '.mat'], '-v7.3')
+save([TIMESTAMP_BEGINNING '_ws02_before_omp1.mat'], '-v7.3')
 
 % run training
 time_omp1 = tic;
@@ -279,7 +279,7 @@ dictionary = run_omp1(patches, numBases, 50);
 fprintf('### OMP1 took %.2f m.\n', toc(time_omp1)/60);
 
 fprintf('saving variable ws03 dictionary _only_\n');
-save(['ws03_dictionary_' TIMESTAMP_BEGINNING '.mat'], 'dictionary', '-v7.3');
+save([TIMESTAMP_BEGINNING '_ws03_dictionary.mat'], 'dictionary', '-v7.3');
 
 % show results of training
 % fprintf('Showing centroids . . .\n');
@@ -303,7 +303,7 @@ trainXCs = bsxfun(@rdivide, bsxfun(@minus, trainXC, trainXC_mean), trainXC_sd);
 trainXCs = [trainXCs, ones(size(trainXCs,1),1)]; % intercept term
 
 fprintf('saving workspace ws04 before training svm..\n');
-save(['ws04_before_train_svm_' TIMESTAMP_BEGINNING '.mat'], '-v7.3')
+save([TIMESTAMP_BEGINNING '_ws04_before_train_svm.mat'], '-v7.3')
 
 % train classifier using SVM
 fprintf('### Time elapsed since beginning: %.2f h.\n', toc(time_begin)/3600);

@@ -22,7 +22,7 @@
 clear all;
 close all;
 
-note = ['changed stride and rfSize, also ratio between ndef and def'];
+note = ['testing 16x16 window with smaller stride'];
 
 system('mkdir -p profiler');
 PROFILER_DIR = [pwd '/profiler/'];
@@ -51,14 +51,14 @@ numTestData = 100; %TODO: should be percentage of the total data available?
 
 %%% Parameters
 numBases = 2400         % number of features
-numPatches = 400000       % with 50k, train accuracy 97% testing accuracy 51%
-percentDefectPatches = 1/6 % to reach ratio 10:1 of ND:Defect
+numPatches = 800000       
+percentDefectPatches = 1/4
 
 numDefPatches = ceil(numPatches * percentDefectPatches);
 numNDefPatches = numPatches - numDefPatches;
 
 rfSize = 16             % receptive field size (window size)
-patchStride = [8 8]   % for im2colstep
+patchStride = [4 4]   % for im2colstep
 
 alpha = 0.25  %% CV-chosen value for soft-threshold function.
 lambda = 1.0  %% CV-chosen sparse coding penalty.

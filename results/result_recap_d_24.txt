@@ -1,0 +1,28 @@
+##### Trial at 2014.09.09-22.15
+File name: .m
+Git commit ID: b0e1c12b47ba8853652f2ce316207b76bbe3be6c
+
+Note = 
+window 16x16 with stride 8x8 seems promising, now testing numPatches.\nNext should be numBases
+
+separateTestFromTrain = 1
+numTestData = 100
+numBases = 2400
+numPatches = 1000000
+numDefPatches = 250000
+numNDefPatches = 750000
+
+rfSize = 16
+patchStride = [8 8]
+
+alpha = 0.25
+lambda = 1.00
+encoder = thresh
+encParam = 0.25
+
+data length = 1600
+
+Train Accuracy 100.000%
+Test Accuracy = 67.000%
+
+Whole process took 2.71 hours.
