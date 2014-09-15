@@ -37,9 +37,13 @@ numTestData = 100; %TODO: should be percentage of the total data available?
 %% Configuration
 rfSize = 16;
 patchStride = [8 8];
-numCentroids=1600;
+numCentroids=2400;
 whitening=true;
-numPatches = 400000;
+numPatches = 800000;
+
+percentDefectPatches = 1/4
+numDefPatches = ceil(numPatches * percentDefectPatches);
+numNDefPatches = numPatches - numDefPatches;
 
 % adding external functions
 addpath minFunc;
