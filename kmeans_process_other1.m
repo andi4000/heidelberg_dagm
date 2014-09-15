@@ -37,7 +37,7 @@ numTestData = 100; %TODO: should be percentage of the total data available?
 %% Configuration
 rfSize = 16;
 patchStride = [8 8];
-numCentroids=2400;
+numCentroids=1600;
 whitening=true;
 numPatches = 800000;
 
