@@ -4,7 +4,7 @@
 clear all;
 close all;
 
-note = ['trying UFL with Kmeans'];
+note = ['kmeans with binary label'];
 
 system('mkdir -p profiler');
 PROFILER_DIR = [pwd '/profiler/'];
@@ -79,6 +79,9 @@ fprintf('### Loading took %.2f s.\n', toc(time_loading));
 
 trainX = [f1.data; f11.data; f11b.data; f11c.data; f11d.data];
 trainY = double([f1.label; f11.label; f11b.label; f11c.label; f11d.label]);
+
+% BINARY LABEL
+trainY(find(trainY==11)) = 0;
 
 % dirty hack --> this is struct of array. should be array of structs
 defectPos.a = [ zeros(size(f1.data,1),1); ...

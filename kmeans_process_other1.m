@@ -4,7 +4,7 @@
 clear all;
 close all;
 
-note = ['trying UFL with Kmeans, binary label'];
+note = ['Kmeans, binary label'];
 
 system('mkdir -p profiler');
 PROFILER_DIR = [pwd '/profiler/'];
@@ -37,7 +37,7 @@ numTestData = 100; %TODO: should be percentage of the total data available?
 %% Configuration
 rfSize = 16;
 patchStride = [8 8];
-numCentroids=1600;
+numCentroids=3200;
 whitening=true;
 numPatches = 800000;
 

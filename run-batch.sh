@@ -8,6 +8,8 @@
 #nohup matlab -nodisplay -nosplash < dagm_process_other4.m > results/run-e-5.log;
 #nohup matlab -nodisplay -nosplash < dagm_process_other5.m > results/run-e-6.log;
 
-nohup matlab -nodisplay -nosplash < kmeans_process.m > results/run-f-1.log;
-nohup matlab -nodisplay -nosplash < kmeans_process_other1.m > results/run-f-2.log;
-nohup matlab -nodisplay -nosplash < kmeans_process_other2.m > results/run-f-3.log;
+nohup matlab -nodisplay -nosplash < kmeans_process.m > results/run-g-1.log;
+nohup matlab -nodisplay -nosplash < kmeans_process_other1.m > results/run-g-2.log;
+nohup matlab -nodisplay -nosplash < kmeans_process_other2.m > results/run-g-3.log;
+nohup matlab -nodisplay -nosplash < kmeans_process_other3.m > results/run-g-4.log;
+
