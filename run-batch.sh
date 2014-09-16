@@ -10,4 +10,4 @@
 
 nohup matlab -nodisplay -nosplash < kmeans_process.m > results/run-f-1.log;
 nohup matlab -nodisplay -nosplash < kmeans_process_other1.m > results/run-f-2.log;
-nohup matlab -nodisplay -nosplash < kmeans_process_other2.m > results/run-f-2.log;
+nohup matlab -nodisplay -nosplash < kmeans_process_other2.m > results/run-f-3.log;
